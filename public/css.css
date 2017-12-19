@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: aliceblue;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+}
+.header{
+    text-align: center;
+    font-weight: normal;
+    font-size: small;
+    background: black;
+    color: #ffffff;
+    opacity: 0.5;
+
+}
+.h{
+    line-height: 66px;
+}
+.gif{
+    text-align: center;
+    margin: auto;margin-top: 50px;
+}
