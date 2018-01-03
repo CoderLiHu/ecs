@@ -2,10 +2,15 @@
     margin: 0;
     padding: 0;
 }
+html{
+    height: 100%;
+}
 body{
     background: aliceblue;
+    height: 100%;
 }
 .container{
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,6 +36,10 @@ body{
 .icp{
     height: 25px;
     background: dimgray;
-    color: #ffffff;
+    font-size: 14px;
     text-align:center;
+}
+.icp a{
+    color: #ffffff;
+    text-decoration: none;
 }
