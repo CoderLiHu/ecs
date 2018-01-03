@@ -3,7 +3,7 @@ var app = express();
 var fs = require('fs');
 app.use(express.static('public'));
 
-app.get('/index.html',function(request,response){
+app.get('/',function(request,response){
     //解析请求，包括文件名
     var pathname = request.path;
 
@@ -11,7 +11,8 @@ app.get('/index.html',function(request,response){
     console.log('Request for ' + pathname + ' received');
 
     //从文件系统中读取请求的文件内容
-    fs.readFile(pathname.substr(1),function(err,data){
+    //fs.readFile(pathname.substr(1),function(err,data){
+    fs.readFile('index.html',function(err,data){
         if(err){
             console.log(err);
             //response.set(404,{'Content-Type':'text/html'});
