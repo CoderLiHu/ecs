@@ -36,8 +36,9 @@ body{
 .icp{
     height: 25px;
     background: dimgray;
-    font-size: 14px;
+    font-size: 12px;
     text-align:center;
+    line-height: 25px;
 }
 .icp a{
     color: #ffffff;
