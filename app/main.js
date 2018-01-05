@@ -9,6 +9,8 @@ var createReactClass =  require('create-react-class');
     }
 })*/
 
+import text from './text.js'
+ReactDOM.render(React.createElement('div',{class:'demo'},text.name),document.getElementById('root'));
 
-
-ReactDOM.render(React.createElement('div',{class:'demo'},'hello react'),document.getElementById('root'));
+import Demo from './component/demo';
+ReactDOM.render(<Demo/>,document.getElementById('demo'));
