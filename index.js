@@ -1,7 +1,19 @@
 var express = require('express');
-var app = express();
+var Webpack = require('webpack');
+var WebpackDevMiddleWare = require('webpack-dev-middleware');
+var config = require('./webpack.config');
 var fs = require('fs');
-app.use(express.static('public'));
+var WebpackHotMiddleware = require('webpack-hot-middleware');
+
+var compiler = Webpack(config);
+var app = express();
+//app.use(express.static('public'));
+app.use(WebpackDevMiddleWare(compiler,{
+    publicPath:'/',
+    stats:{color:true},
+    lazy:false,
+}));
+app.use(WebpackHotMiddleware(compiler));
 
 app.get('/',function(request,response){
     //解析请求，包括文件名
@@ -12,7 +24,7 @@ app.get('/',function(request,response){
 
     //从文件系统中读取请求的文件内容
     //fs.readFile(pathname.substr(1),function(err,data){
-    fs.readFile('index.html',function(err,data){
+    fs.readFile('public/index.html',function(err,data){
         if(err){
             console.log(err);
             //response.set(404,{'Content-Type':'text/html'});

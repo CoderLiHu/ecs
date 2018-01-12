@@ -2,6 +2,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var createReactClass =  require('create-react-class');
+import {AppContainer} from 'react-hot-loader'
 //var styles = require('./css.css')
 /*var Demo = React.createFactory({
     render:function(){
@@ -9,8 +10,17 @@ var createReactClass =  require('create-react-class');
     }
 })*/
 
-import text from './text.js'
-ReactDOM.render(React.createElement('div',{class:'demo'},text.name),document.getElementById('root'));
+
 
 import Demo from './component/demo';
-ReactDOM.render(<Demo/>,document.getElementById('demo'));
+import Demo1 from './component/demo2';
+import text from './text.js'
+//ReactDOM.render(React.createElement('div',{className:'demo'},text.name),document.getElementById('root'));
+ReactDOM.render(<Demo1/>,document.getElementById('root'));
+
+
+ReactDOM.render(<AppContainer><Demo/></AppContainer>,document.getElementById('demo'));
+
+if (module.hot) {
+    module.hot.accept();
+}
