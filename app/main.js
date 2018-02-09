@@ -14,12 +14,13 @@ import {AppContainer} from 'react-hot-loader'
 
 import Demo from './component/demo';
 import Demo1 from './component/demo2';
+import FetchTest from './component/test';
 import text from './text.js'
 //ReactDOM.render(React.createElement('div',{className:'demo'},text.name),document.getElementById('root'));
-ReactDOM.render(<Demo1/>,document.getElementById('root'));
+//ReactDOM.render(<Demo1/>,document.getElementById('root'));
 
 
-ReactDOM.render(<AppContainer><Demo/></AppContainer>,document.getElementById('demo'));
+ReactDOM.render(<AppContainer><FetchTest/></AppContainer>,document.getElementById('demo'));
 
 if (module.hot) {
     module.hot.accept();

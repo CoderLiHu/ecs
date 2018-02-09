@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import styles from './demo1.css'
+import styles from './demo1-m.css'
 //var styles = require('../css.css')
 import Demo from './demo'
 class Demo1 extends Component{
@@ -16,7 +16,7 @@ class Demo1 extends Component{
     }
     render(){
         return (
-            <div className={styles.demo2}>Demo,Hello!Hello!  HOT??
+            <div className={styles.demo2}>Demo
                 <a onClick={this.HHclick}>{this.state.value}</a>
                 <Demo/>
             </div>

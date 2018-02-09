@@ -5,10 +5,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     devtool:'eval-source-map',
-    entry:['react-hot-loader/patch','webpack-hot-middleware/client',__dirname + '/app/main.js'],
+    entry:{
+        main:['react-hot-loader/patch','webpack-hot-middleware/client',__dirname + '/app/main.js']
+    },
     output:{
         path:__dirname + '/public',
-        filename:'bundle.js'
+        filename:'[name].js'
     },
     module:{
         rules:[
@@ -52,7 +54,7 @@ module.exports = {
                     ]
                 })
 
-            }
+            },
         ]
     },
     plugins:[
@@ -63,6 +65,15 @@ module.exports = {
             favicon: __dirname + '/public/favicon.png',
             inject:'body',
             filename:'index.html'
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name:'vendor',
+            minChunks:function(module){
+                return module.context && module.context.indexOf('react') !== -1;
+            }
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name:'common'
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin()

@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import styles from './demo.css'
+import styles from './demo-m.css'
 //var styles = require('../css.css')
 class Demo extends Component{
     constructor(props){
